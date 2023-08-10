@@ -1,31 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  <title>{{title}}</title>
-  </head>
-  <div class="header">
-    <h1>Currency Converter</h1>
-  </div>
-  <body>
-    <div class="container">
-  <form>
-    <label for="fromCurrency">Source CCY</label><br>
-    <select id="fromCurrency" [(ngModel)]="opted" name="opted" (change)="change()">
-      <option value=1.126735>USD</option>
-      <option value=0.876893>GBP</option>
-      <option value=79.677056>INR</option>
-    </select><br><br>
-    <label for="toCurrency">TargetCCY</label> <br>
-    <select id="toCurrency" [(ngModel)]="opted2" name="opted2" (change)="change()">
-      <option value=1.126735>USD</option>
-      <option value=0.876893>GBP</option>
-      <option value=79.677056>INR</option></select><br><br>
-      <input type="number" id="amount" name="Amount" [(ngModel)]="Amount" placeholder="Enter amount"/><br><br>
-      <button id="submitButton" (click)="submit()">Submit</button><br>
-      <div id="result">
-        <p id="resValue" *ngIf="clicked">{{(Amount |ang:opted:opted2 | number:'1.0-0').replaceAll(',', '')}}.00</p>
-      </div>
-      </form>
-    </div>
-</body>
-</html>
+<form>
+  From:
+  <select name="fCurrency" [(ngModel)]="opt1" id="fromCurrency">
+    <option value="1.126735">USD</option>
+    <option value="79.677056">INR</option>
+    <option value="0.876893">GBP</option>
+  </select><br>
+  To:
+  <select name="tCurrency" [(ngModel)]="opt2" id="toCurrency">
+    <option value="1.126735">USD</option>
+    <option value="79.677056">INR</option>
+    <option value="0.876893">GBP</option>
+  </select>
+  <input type="number" [(ngModel)]="amt" name="amount" id="amount">
+  <input type="button" value="convert" id="submitButton" (click)="exchange(opt1, opt2, amt)">
+  <input type="text" [(ngModel)]="res" id="result">
+  <p id="resValue">{{ result }}</p>
+</form>

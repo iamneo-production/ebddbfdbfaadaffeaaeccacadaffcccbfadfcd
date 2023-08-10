@@ -3,12 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ForexPipe } from './forex.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ForexPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -18,4 +16,4 @@ import { ForexPipe } from './forex.pipe';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }
